@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
+import { web3TradeExample } from './web3TradeExample'
 
 export const AddTransaction = () => {
 
@@ -17,27 +18,24 @@ export const AddTransaction = () => {
             amount: +amount
         }
 
-        addTransaction(newTransaction);
+console.log(newTransaction)
+
+web3TradeExample();
+
+        //addTransaction(newTransaction);
     }
 
     return (
         <>
             <form onSubmit={onSubmit}>
                 <div className="form-control">
-                    <label htmlFor="text">Add Description </label>
+                    <label htmlFor="text">Trade Token</label>
                     <input type="text" value={text} onChange={
                         (e) => setText(e.target.value)}
-                        placeholder="Enter text...">
+                        placeholder="Enter trade amount...">
                     </input>
                 </div>
-                <div className="form-control">
-                    <label htmlFor="amount">Add Amount <br/>
-                    (negative for  expense, positive for income)
-                    </label>
-                    <input type="number" value={amount} onChange={
-                        (e) => setAmount(e.target.value)} placeholder="Enter amount..."  />
-                </div>
-                <button className="btn">Add transaction</button>
+                <button className="btn">Send transaction</button>
             </form>
         </>
     )
