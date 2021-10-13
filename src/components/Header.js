@@ -4,7 +4,7 @@ import '../App.css';
 export const Header = () => {
     return (
         <h2>
-                Basic Form
+           Expense Tracker App
         </h2>
     )
 }
